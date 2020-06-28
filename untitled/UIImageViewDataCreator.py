@@ -1,21 +1,19 @@
 import json
 import os
 dict_temp = {
-    "init": "UIButton *WHYName = [UIButton buttonWithType:UIButtonTypeCustom];",
+    "init": "UIImageView *WHYName = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@\"<#qs_video_background#>\"]];",
     "frame": "WHYName.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);",
+    "imageUrl": "#import \"UIImageView+WebCache.h\" [WHYName sd_setImageWithURL:[NSURL URLWithString:[Utility urlEncode:imageUrl]] placeholderImage:@\"wuhytodo\"];",
     "cornerRadius": "WHYName.layer.cornerRadius = 4;\nWHYName.layer.masksToBounds = YES;",
-    "title": "[WHYName setTitle:@\"<#content#>\" forState:UIControlStateNormal];\n[WHYName setTitleColor:<#Color_Theme#> forState:UIControlStateNormal];\nWHYName.titleLabel.font = GetMediumFont(<#16#>);",
-    "image": "[WHYName setImage:[UIImage imageNamed:@\"<#content#>\"] forState:UIControlStateNormal];",
-    "backgroundColor": "WHYName.backgroundColor = <#Color_FC5A1C#>;",
-    "clicked": "[WHYName addTarget:self action:@selector(<#WHYNameClicked:#>) forControlEvents:UIControlEventTouchUpInside];\n- (void)WHYNameClicked:(UIButton *)button{\n\n}",
-    "Border": "[WHYName.layer setBorderColor:<#Color_Theme#>.CGColor];\n[WHYName.layer setBorderWidth:<#1.0#>];",
+    "contentMode": "WHYName.contentMode = UIViewContentModeScaleToFill;",
+    "clicked": "[WHYName addTarget:self action:@selector(<#WHYNameClicked:#>) forControlEvents:UIControlEventTouchUpInside];\nWHYName.userInteractionEnabled = YES;",
     "addSubView": "[<#self#> addSubview:WHYName];",
     "masonry": "[WHYName mas_makeConstraints:^(MASConstraintMaker *make) {\n<#make.left.mas_equalTo(16);#>\n<#make.right.mas_equalTo(-16);#>\n<#make.top.mas_equalTo(16);#>\n<#make.bottom.mas_equalTo(0);#>\n<#make.width.mas_equalTo(16);#>\n<#make.height.mas_equalTo(16);#>\n}];",
 }
 
 file = open("UIFilePath.txt", 'r')
 dict = json.loads(file.read())
-myFile = dict["UIButton"]
+myFile = dict["UIImageView"]
 
 if os.path.exists(myFile):
     os.remove(myFile)
@@ -27,6 +25,6 @@ file.close()
 file = open(myFile, 'r')
 dict = json.loads(file.read())
 print(dict)
-print(dict["title"])
+print(dict["init"])
 # 注意关闭文件
 file.close()

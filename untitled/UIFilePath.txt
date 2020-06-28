@@ -1,1 +1,1 @@
-{"UIButton": "UIButtonJson.txt", "UILabel": "UILabelJson.text", "UITableView": "UITableViewJson.text"}
+{"UIButton": "UIButtonJson.txt", "UILabel": "UILabelJson.text", "UITableView": "UITableViewJson.text", "UITableViewCell": "UITableViewCellJson.text", "UIImageView": "UIImageViewJson.text", "UIScrollView": "UIScrollViewJson.text", "NSMutableAttributedString": "NSMutableAttributedStringJson.text", "UITextView": "UITextViewJson.text", "UICollectionView": "UICollectionViewJson.text"}

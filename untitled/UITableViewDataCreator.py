@@ -7,7 +7,7 @@ dict_temp = {
     "backgroundColor": "WHYName.backgroundColor = UIColor.whiteColor;",
     "registerClass": "NSString* const CellIdentifier = @\"CellIdentifier\";\n[WHYName registerClass:[<#ELInteractiveListTableViewCell#> class] forCellReuseIdentifier:CellIdentifier];",
     "addSubView": "[<#self#> addSubview:WHYName];",
-    "masonry": "[WHYName mas_makeConstraints:^(MASConstraintMaker *make) {\n<#make.left.mas_equalTo(16);#>\n<#make.right.mas_equalTo(16);#>\n<#make.top.mas_equalTo(16);#>\n<#make.bottom.mas_equalTo(0);#>\n<#make.width.mas_equalTo(16);#>\n<#make.height.mas_equalTo(16);#>\n}];",
+    "masonry": "[WHYName mas_makeConstraints:^(MASConstraintMaker *make) {\nmake.edges.mas_equalTo(0);\n<#make.left.mas_equalTo(16);#>\n<#make.right.mas_equalTo(16);#>\n<#make.top.mas_equalTo(16);#>\n<#make.bottom.mas_equalTo(0);#>\n<#make.width.mas_equalTo(16);#>\n<#make.height.mas_equalTo(16);#>\n}];",
     "sectionNum": "- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{\nreturn 1;\n}\n",
     "rowNum": "- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{\nreturn interactionList.data.count;\n}\n",
     "rowHeight": "- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{\nreturn 103;\n}\n",

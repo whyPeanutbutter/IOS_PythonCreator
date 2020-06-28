@@ -4,6 +4,12 @@ dict_temp = {
     "UIButton": "UIButtonJson.txt",
     "UILabel": "UILabelJson.text",
     "UITableView": "UITableViewJson.text",
+    "UITableViewCell": "UITableViewCellJson.text",
+    "UIImageView": "UIImageViewJson.text",
+    "UIScrollView": "UIScrollViewJson.text",
+    "NSMutableAttributedString": "NSMutableAttributedStringJson.text",
+    "UITextView": "UITextViewJson.text",
+    "UICollectionView": "UICollectionViewJson.text",
 }
 myFile = "UIFilePath.txt"
 if os.path.exists(myFile):
