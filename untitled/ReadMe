@@ -1,0 +1,14 @@
+如何使用？
+1.运行主文件mainPy.py
+
+
+如何创建和添加修改内容？
+1.找到filePathCreator.py
+2.添加你要的key
+3.创建相应的dataCreator文件，注意myFile = dict["****"]的替换
+4.在mainPy.py添加dataCreator文件
+5.运行主文件mainPy.py
+
+
+有什么便捷工具？
+使用WHYStringFormator可以快速创建多行的字典value，这样就不用一行行转换加\n了

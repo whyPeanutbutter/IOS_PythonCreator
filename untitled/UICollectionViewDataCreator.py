@@ -6,7 +6,7 @@ dict_temp = {
     "backgroundColor": "WHYName.backgroundColor = UIColor.whiteColor;",
     "registerClass": "NSString* const CellIdentifier = @\"CellIdentifier\";\n[WHYName registerClass:[<#ELInteractiveListTableViewCell#> class] forCellReuseIdentifier:CellIdentifier];",
     "addSubView": "[<#self#> addSubview:WHYName];",
-    "masonry": "[WHYName mas_makeConstraints:^(MASConstraintMaker *make) {\n<#make.left.mas_equalTo(16);#>\n<#make.right.mas_equalTo(16);#>\n<#make.top.mas_equalTo(16);#>\n<#make.bottom.mas_equalTo(0);#>\n<#make.width.mas_equalTo(16);#>\n<#make.height.mas_equalTo(16);#>\n}];",
+    "masonry": "[WHYName mas_makeConstraints:^(MASConstraintMaker *make) {\n}];",
     "sectionNum": "- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView{\nreturn_topSearchComponent.render.horizontal;\n}\n",
     "rowNum": "- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section\n{\nreturn _topSearchComponent.render.vertical;\n}",
     "ItemSize": "- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath\n{\nreturn CGSizeMake(itemWidth, itemHeight);\n}",

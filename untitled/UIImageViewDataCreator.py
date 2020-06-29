@@ -8,7 +8,7 @@ dict_temp = {
     "contentMode": "WHYName.contentMode = UIViewContentModeScaleToFill;",
     "clicked": "[WHYName addTarget:self action:@selector(<#WHYNameClicked:#>) forControlEvents:UIControlEventTouchUpInside];\nWHYName.userInteractionEnabled = YES;",
     "addSubView": "[<#self#> addSubview:WHYName];",
-    "masonry": "[WHYName mas_makeConstraints:^(MASConstraintMaker *make) {\n<#make.left.mas_equalTo(16);#>\n<#make.right.mas_equalTo(-16);#>\n<#make.top.mas_equalTo(16);#>\n<#make.bottom.mas_equalTo(0);#>\n<#make.width.mas_equalTo(16);#>\n<#make.height.mas_equalTo(16);#>\n}];",
+    "masonry": "[WHYName mas_makeConstraints:^(MASConstraintMaker *make) {\n}];",
 }
 
 file = open("UIFilePath.txt", 'r')

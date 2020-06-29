@@ -59,6 +59,7 @@ os.system("python NSMutableAttributedStringDataCreator.py")
 os.system("python UITextViewDataCreator.py")
 os.system("python UICollectionViewDataCreator.py")
 os.system("python UIScrollViewDataCreator.py")
+os.system("python WHYMasConstraintsCreator.py")
 
 window = tk.Tk()
 window.title('WHY IOS Creator')

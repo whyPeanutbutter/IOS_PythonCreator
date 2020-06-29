@@ -7,6 +7,7 @@ dict_temp = {
     "UITableViewCell": "UITableViewCellJson.text",
     "UIImageView": "UIImageViewJson.text",
     "UIScrollView": "UIScrollViewJson.text",
+    "WHYMasConstraints": "WHYMasConstraintsJson.text",
     "NSMutableAttributedString": "NSMutableAttributedStringJson.text",
     "UITextView": "UITextViewJson.text",
     "UICollectionView": "UICollectionViewJson.text",

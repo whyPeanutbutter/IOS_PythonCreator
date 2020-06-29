@@ -4,6 +4,7 @@ dict_temp = {
     "init": "UIScrollView *WHYName = [[UIScrollView alloc]init];\nWHYName.showsVerticalScrollIndicator = NO;\nWHYName.showsHorizontalScrollIndicator = NO;",
     "frame": "WHYName.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);",
     "backgroundColor": "WHYName.backgroundColor = UIColor.whiteColor;",
+    "delegate": "UIScrollViewDelegate WHYName.delegate = self;",
     "addSubView": "[<#self#> addSubview:WHYName];",
     "masonry": "[WHYName mas_makeConstraints:^(MASConstraintMaker *make) {\n}];",
     "@available(iOS 11.0, *)": "if (@available(iOS 11.0, *)) {\nscrollView.insetsLayoutMarginsFromSafeArea = NO;\nscrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;\n} else {\n self.automaticallyAdjustsScrollViewInsets = NO;\n}",
