@@ -10,12 +10,11 @@ def hit_me():
     outStr = "QS"
     x = tempstr.split("_")
     for astr in x:
-        outStr = outStr + astr.capitalize()
+        outStr = outStr + astr[0:1].capitalize() + astr[1:]
     print(outStr)
     window.clipboard_clear()
     window.clipboard_append(outStr.replace('\n', ''))
     # window.clipboard_append('"' + repr(tempstr)[1:-3] + '",')
-
 
 window = tk.Tk()
 window.title('WHY String Creator')
