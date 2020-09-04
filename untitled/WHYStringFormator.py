@@ -4,9 +4,17 @@ import tkinter as tk  # 使用Tkinter前需要先导入
 
 def hit_me():
     tempstr = nameEntry.get('1.0', 'end').replace('  ', '')
-    print('"' + repr(tempstr)[1:-3] + '",')
+    # print('"' + repr(tempstr)[1:-3] + '",')
+    tempstr = tempstr.replace('@2x', '')
+    tempstr = tempstr.replace('@3x', '')
+    outStr = "QS"
+    x = tempstr.split("_")
+    for astr in x:
+        outStr = outStr + astr.capitalize()
+    print(outStr)
     window.clipboard_clear()
-    window.clipboard_append('"' + repr(tempstr)[1:-3] + '",')
+    window.clipboard_append(outStr.replace('\n', ''))
+    # window.clipboard_append('"' + repr(tempstr)[1:-3] + '",')
 
 
 window = tk.Tk()

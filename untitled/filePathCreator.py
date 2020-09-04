@@ -11,6 +11,7 @@ dict_temp = {
     "NSMutableAttributedString": "NSMutableAttributedStringJson.text",
     "UITextView": "UITextViewJson.text",
     "UICollectionView": "UICollectionViewJson.text",
+    # "接口相关": "ServerAPIJson.text"
 }
 myFile = "UIFilePath.txt"
 if os.path.exists(myFile):
