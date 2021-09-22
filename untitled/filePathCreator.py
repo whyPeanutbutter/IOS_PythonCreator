@@ -1,6 +1,7 @@
 import json
 import os
 dict_temp = {
+    "UIView": "UIViewJson.text",
     "UIButton": "UIButtonJson.txt",
     "UILabel": "UILabelJson.text",
     "UITableView": "UITableViewJson.text",
@@ -8,10 +9,11 @@ dict_temp = {
     "UIImageView": "UIImageViewJson.text",
     "UIScrollView": "UIScrollViewJson.text",
     "WHYMasConstraints": "WHYMasConstraintsJson.text",
-    "NSMutableAttributedString": "NSMutableAttributedStringJson.text",
     "UITextView": "UITextViewJson.text",
+    "数据库": "FMDBDataBaseJson.text",
+    "接口相关": "ServerAPIJson.text",
     "UICollectionView": "UICollectionViewJson.text",
-    # "接口相关": "ServerAPIJson.text"
+    "NSMutableAttributedString": "NSMutableAttributedStringJson.text"
 }
 myFile = "UIFilePath.txt"
 if os.path.exists(myFile):

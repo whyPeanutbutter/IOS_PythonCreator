@@ -5,7 +5,7 @@ dict_temp = {
     "frame": "WHYName.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);",
     "estimatedRowHeight": "WHYName.estimatedRowHeight = <#65#>;\ntableView.rowHeight = UITableViewAutomaticDimension;",
     "backgroundColor": "WHYName.backgroundColor = UIColor.whiteColor;",
-    "registerClass": "NSString* const CellIdentifier = @\"CellIdentifier\";\n[WHYName registerClass:[<#ELInteractiveListTableViewCell#> class] forCellReuseIdentifier:CellIdentifier];",
+    "registerClass": "static NSString* const CellIdentifier = @\"CellIdentifier\";\n[WHYName registerClass:[<#ELInteractiveListTableViewCell#> class] forCellReuseIdentifier:CellIdentifier];",
     "addSubView": "[<#self#> addSubview:WHYName];",
     "masonry": "[WHYName mas_makeConstraints:^(MASConstraintMaker *make) {\n}];",
     "sectionNum": "- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{\nreturn 1;\n}\n",
