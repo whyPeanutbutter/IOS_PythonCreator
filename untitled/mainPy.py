@@ -7,18 +7,43 @@ def print_selection():
     global varDict
     global tempDict
     global nameEntry
-    l.delete('1.0', 'end')
-    l.insert('end', tempDict["init"])
-    l.insert('end', '\n')
+    global needAppendString
+
+    textView.delete('1.0', 'end')
+    textView.insert('end', tempDict["init"])
+    textView.insert('end', '\n')
     for key1, values1 in varDict.items():
         if varDict[key1].get() == 1:
-            l.insert('end', tempDict[key1])
-            l.insert('end', '\n')
-    mystr = str(l.get('1.0', 'end')).replace('WHYName', nameEntry.get())
-    l.delete('1.0', 'end')
-    l.insert('end', mystr)
+            textView.insert('end', tempDict[key1])
+            textView.insert('end', '\n')
+    mystr = str(textView.get('1.0', 'end')).replace('WHYName', nameEntry.get())
+    textView.delete('1.0', 'end')
+    textView.insert('end', mystr)
     window.clipboard_clear()
-    window.clipboard_append(mystr)
+    window.clipboard_append(needAppendString + mystr)
+    if isAppendString:
+        needAppendString = needAppendString + mystr
+    else:
+        needAppendString = ""
+
+
+def stop_append_string():
+    global needAppendString
+    global isAppendString
+    needAppendString = ""
+    isAppendString = False
+    button.configure(text="点击合并代码")
+
+
+def append_string():
+    global needAppendString
+    global isAppendString
+    if isAppendString:
+        stop_append_string()
+    else:
+        isAppendString = True
+        needAppendString = window.clipboard_get()
+        button.configure(text="点击停止合并代码")
 
 
 def creatSelection():
@@ -49,6 +74,8 @@ def creatSelection():
 
 varDict = dict()
 tempDict = dict()
+needAppendString = ""
+isAppendString = False
 os.system("python filePathCreator.py")
 os.system("python UIbuttonDataCreator.py")
 os.system("python UILabelCreator.py")
@@ -68,8 +95,8 @@ window = tk.Tk()
 window.title('WHY IOS Creator')
 # 设定窗口的大小(长 * 宽)
 window.geometry('500x500')  # 这里的乘是小x
-l = tk.Text(window)
-l.place(x=0, y=0, height=70)
+textView = tk.Text(window)
+textView.place(x=0, y=0, height=70)
 
 pathfile = open("UIFilePath.txt", 'r')
 pathDict = json.loads(pathfile.read())
@@ -83,5 +110,8 @@ for key, values in pathDict.items():
 frame = tk.Frame(window)
 frame.place(x=150, y=90, width=300, height=800)
 nameEntry = tk.Entry()
+
+button = tk.Button(window, text="点击补充代码", command=append_string)
+button.place(x=350, y=400, width=150, height=100)
 
 window.mainloop()
