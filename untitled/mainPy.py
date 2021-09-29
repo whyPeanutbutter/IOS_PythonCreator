@@ -8,6 +8,7 @@ def print_selection():
     global tempDict
     global nameEntry
     global needAppendString
+    global currentDisplayStr
 
     textView.delete('1.0', 'end')
     textView.insert('end', tempDict["init"])
@@ -16,15 +17,11 @@ def print_selection():
         if varDict[key1].get() == 1:
             textView.insert('end', tempDict[key1])
             textView.insert('end', '\n')
-    mystr = str(textView.get('1.0', 'end')).replace('WHYName', nameEntry.get())
+    currentDisplayStr = str(textView.get('1.0', 'end')).replace('WHYName', nameEntry.get())
     textView.delete('1.0', 'end')
-    textView.insert('end', mystr)
+    textView.insert('end', currentDisplayStr)
     window.clipboard_clear()
-    window.clipboard_append(needAppendString + mystr)
-    if isAppendString:
-        needAppendString = needAppendString + mystr
-    else:
-        needAppendString = ""
+    window.clipboard_append(needAppendString + currentDisplayStr)
 
 
 def stop_append_string():
@@ -33,6 +30,8 @@ def stop_append_string():
     needAppendString = ""
     isAppendString = False
     button.configure(text="点击合并代码")
+    window.clipboard_clear()
+    window.clipboard_append(needAppendString + currentDisplayStr)
 
 
 def append_string():
@@ -42,14 +41,16 @@ def append_string():
         stop_append_string()
     else:
         isAppendString = True
-        needAppendString = window.clipboard_get()
-        button.configure(text="点击停止合并代码")
+        button.configure(text="点击清除合并代码")
 
 
 def creatSelection():
     global tempDict
     global varDict
     global nameEntry
+    global needAppendString
+
+    needAppendString = currentDisplayStr + needAppendString
     myFile = pathDict[varUIName.get()]
     for widget in frame.winfo_children():
         widget.destroy()
@@ -76,6 +77,8 @@ varDict = dict()
 tempDict = dict()
 needAppendString = ""
 isAppendString = False
+currentDisplayStr = ""
+
 os.system("python filePathCreator.py")
 os.system("python UIbuttonDataCreator.py")
 os.system("python UILabelCreator.py")
