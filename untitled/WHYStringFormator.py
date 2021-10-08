@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # 将输入的字符转换成string 如换行变为 \n,输出为dict的value
 import tkinter as tk  # 使用Tkinter前需要先导入
 

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import tkinter as tk  # 使用Tkinter前需要先导入
 import json
 import os

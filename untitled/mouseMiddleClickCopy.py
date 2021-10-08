@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import pyautogui as pag
 from pynput.mouse import Listener, Button
 
