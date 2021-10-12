@@ -13,7 +13,7 @@ dict_temp = {
 
 file = open("UIFilePath.txt", 'r')
 dict = json.loads(file.read())
-myFile = dict["接口相关"]
+myFile = dict[u"接口相关"]
 
 if os.path.exists(myFile):
     os.remove(myFile)

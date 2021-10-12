@@ -67,10 +67,11 @@ def creatSelection():
     for key, values in tempDict.items():
         i = i + 1
         if key == 'init':
+            i = i - 1
             continue
         var1 = tk.IntVar()
         c1 = tk.Checkbutton(frame, text=key, variable=var1, onvalue=1, offvalue=0, command=print_selection)
-        c1.place(x=0, y=i * 20)
+        c1.place(x=0, y=i * 20 + 25)
         varDict[key] = var1
 
 

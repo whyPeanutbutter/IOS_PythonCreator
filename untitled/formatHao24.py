@@ -30,30 +30,31 @@ def lower_str():
         if len(arrTemp) == 0 or arrTemp[0] == '参数':
             needJump = True
         if not needJump:
-            strTemp = arrTemp[0][0:1].lower() + arrTemp[0][1:]
+            protertyName = arrTemp[0][0:1].lower() + arrTemp[0][1:]
+            orginArrTemp = arrTemp.copy()
             for i in range(len(arrTemp)):
                 arrTemp[i] = arrTemp[i].lower()
             if len(arrTemp) > 1:
                 if "string" in arrTemp:
-                    outStr = outStr + '\n' + "@property (nonatomic, strong) NSString *" + strTemp + ';'
+                    outStr = outStr + '\n' + "@property (nonatomic, strong) NSString *" + protertyName + ';'
                 elif ("int" in arrTemp) or ("long" in arrTemp) or ("datetime" in arrTemp) or ("number" in arrTemp) or (
                         "integer" in arrTemp) or ("date" in arrTemp):
-                    outStr = outStr + '\n' + "@property (nonatomic, strong) NSString *" + strTemp + ';'
+                    outStr = outStr + '\n' + "@property (nonatomic, strong) NSString *" + protertyName + ';'
                 elif ("bool" in arrTemp) or ("boolean" in arrTemp):
-                    outStr = outStr + '\n' + "@property (nonatomic, assign) BOOL " + strTemp + ';'
+                    outStr = outStr + '\n' + "@property (nonatomic, assign) BOOL " + protertyName + ';'
                 elif ("double" in arrTemp) or ("float" in arrTemp):
-                    outStr = outStr + '\n' + "@property (nonatomic, strong) NSString *" + strTemp + ';'
-                elif arrTemp[1].startswith('List<'):
-                    outStr = outStr + '\n' + "@property (nonatomic, strong) NSArray<" + strTemp[4:5].capitalize() + strTemp[5:-1] + ' *' + "> *" + strTemp + ';(这是推测类型)'
+                    outStr = outStr + '\n' + "@property (nonatomic, strong) NSString *" + protertyName + ';'
+                elif arrTemp[1].startswith('list<'):
+                    outStr = outStr + '\n' + "@property (nonatomic, strong) NSArray<" + orginArrTemp[1][5:-1] + ' *' + "> *" + protertyName + ';(这是推测类型)'
                 else:
-                    outStr = outStr + '\n' + "@property (nonatomic, strong) " + strTemp[0:1].capitalize() + strTemp[1:] + ' *' + strTemp + ';(这是推测类型)'
+                    outStr = outStr + '\n' + "@property (nonatomic, strong) " + orginArrTemp[1] + ' *' + protertyName + ';(这是推测类型)'
             else:
                 print(outStr)
                 print(arrTemp)
                 if len(outStr) == 0:
-                    outStr = "@interface " + strTemp[0:1].capitalize() + strTemp[1:] + ' : ELBaseResponse (这是推测类型)'
+                    outStr = "@interface " + protertyName[0:1].capitalize() + protertyName[1:] + ' : ELBaseResponse (这是推测类型)'
                 else:
-                    outStr = outStr + "\n@end\n" + '\n\n' + "@interface " + strTemp[0:1].capitalize() + strTemp[1:] + ' : NSObject (这是推测类型)'
+                    outStr = outStr + "\n@end\n" + '\n\n' + "@interface " + protertyName[0:1].capitalize() + protertyName[1:] + ' : NSObject (这是推测类型)'
         if needJump == False and len(arrTemp) > 2 and is_first_chinese_or_number(arrTemp[2]):
             outStr = outStr + '//' + arrTemp[2]
         if j == len(arr):

@@ -14,7 +14,7 @@ dict_temp = {
 
 file = open("UIFilePath.txt", 'r')
 dict = json.loads(file.read())
-myFile = dict["数据库"]
+myFile = dict[u"数据库"]
 
 if os.path.exists(myFile):
     os.remove(myFile)
