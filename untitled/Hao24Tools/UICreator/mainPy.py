@@ -11,6 +11,7 @@ def print_selection():
     global needAppendString
     global currentDisplayStr
 
+
     textView.delete('1.0', 'end')
     textView.insert('end', tempDict["init"])
     textView.insert('end', '\n')
@@ -50,8 +51,10 @@ def creatSelection():
     global varDict
     global nameEntry
     global needAppendString
+    global isAppendString
 
     needAppendString = currentDisplayStr + needAppendString
+
     myFile = pathDict[varUIName.get()]
     for widget in frame.winfo_children():
         widget.destroy()
@@ -116,7 +119,7 @@ frame = tk.Frame(window)
 frame.place(x=150, y=90, width=300, height=800)
 nameEntry = tk.Entry()
 
-button = tk.Button(window, text="点击补充代码", command=append_string)
+button = tk.Button(window, text="补充代码模式", command=append_string)
 button.place(x=350, y=400, width=150, height=100)
 
 window.mainloop()
