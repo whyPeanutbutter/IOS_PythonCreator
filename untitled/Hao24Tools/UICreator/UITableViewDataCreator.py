@@ -2,7 +2,7 @@
 import json
 import os
 dict_temp = {
-    "init": "UITableViewDataSource,UITableViewDelegate\nUITableView *WHYName = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped]; \ntableView.dataSource = self;\ntableView.delegate = self;\nWHYName.separatorStyle = UITableViewCellSeparatorStyleNone;\nWHYName.showsVerticalScrollIndicator = NO;",
+    "init": "UITableViewDataSource,UITableViewDelegate\nUITableView *WHYName = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped]; \ntableView.dataSource = self;\ntableView.delegate = self;\nWHYName.separatorStyle = UITableViewCellSeparatorStyleNone;\nWHYName.showsVerticalScrollIndicator = NO;if (@available(iOS 15.0, *)) {\nWHYName.sectionHeaderTopPadding = 0;}",
     "frame": "WHYName.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);",
     "estimatedRowHeight": "WHYName.estimatedRowHeight = <#65#>;\ntableView.rowHeight = UITableViewAutomaticDimension;",
     "backgroundColor": "WHYName.backgroundColor = UIColor.whiteColor;",
